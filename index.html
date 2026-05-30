@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ehtimollik nazariyasi</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* header */
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 1rem;
+        }
+
+        .logo {
+            width: 6.25rem;
+        }
+
+        .about {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 2rem;
+
+            max-width: 37.5rem;
+            /* 🔥 MUHIM */
+            margin: 0 auto;
+            /* 🔥 MARKAZ */
+        }
+
+        .about img {
+            width: 12.5rem;
+            height: auto;
+            border-radius: 0.625rem;
+            box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.4);
+        }
+
+        .about-as {
+            flex: 1;
+        }
+
+        /* futer */
+        .futer {
+            width: 100%;
+            background-color: #1e293b;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            margin-top: auto;
+            text-align: center;
+
+            padding: 1.875rem 0.625rem;
+            /* 🔥 MUHIM */
+        }
+
+        .nom {
+            margin: 0 auto;
+            /* 🔥 markazga qo‘yadi */
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <div class="header">
+            <h1>Iqtisodiyot va pedagogika universiteti</h1>
+            <img src="logo.png" class="logo">
+            <h1>Raqamli texnologiyalar fakulteti</h1>
+            <h1>Matematika kafedrasi</h1>
+        </div>
+        <div class="navbar">
+
+            <div class="brand">
+                <div class="mini-logo">
+                    <img src="logo.png" alt="logo">
+                    <span>IPU</span>
+                </div>
+
+                <h3 class="nom">Differensial geometriya va topologiya</h3>
+            </div>
+            <div class="menu">
+                <!-- 1 -->
+                <div class="menu-item" onclick="toggleMenu(this ,event)">
+                    <a href="index.html" class="menu-btn menyu active">Bosh sahifa</a>
+                </div>
+
+                <!-- 2 -->
+                <div class="menu-item" onclick="toggleMenu(this, event)">
+                    <a href="fan_hujjatlari.html" class="menu-btn menyu">Fan hujjatlari</a>
+                </div>
+
+                <!-- 3 -->
+                <div class="menu-item" onclick="toggleMenu(this, event)">
+                    <div class="menu-btn">Fan resurslari <span class="arrow">▼</span></div>
+                    <div class="dropdown">
+                        <a href="maruza.html">Maruza</a>
+                        <a href="amaliy.html">Amaliy</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- about -->
+        <div class="container">
+            <section class="about">
+                <img src="Davlatov Shokir Oltiboyevich.jpg" alt="rasm">
+
+                <div class="about-as                                        ">
+                    <h3>Davlatov Shokir Oltiboyevich</h3>
+                    <h3>lavozimi: Dotsent v.b. PhD.</h3>
+                    <!-- <h3>ilmiy darajasi:</h3>
+                    <h3>ilmiy unvoni:</h3> -->
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <section class="futer">
+        <div>
+            <p>© 2026 Matematika kafedrasi</p>
+            <p>Tel: +998 91 637 49 01</p>
+            <p>Email: davlatov1968@mail.ru</p>
+        </div>
+    </section>
+
+    <script src="fan_res.js"></script>
+    <script>
+
+        // ================= DROPDOWN =================
+        function toggleMenu(element, event) {
+            event.stopPropagation();
+
+            let isOpen = element.classList.contains("active");
+
+            // hamma dropdownni yopadi
+            document.querySelectorAll(".menu-item").forEach(item => {
+                item.classList.remove("active");
+            });
+
+            // kerak bo‘lsa ochadi
+            if (!isOpen) {
+                element.classList.add("active");
+            }
+        }
+
+        // ================= MOBILE MENU =================
+        function toggleNav() {
+            const menu = document.querySelector(".menu");
+            const toggle = document.querySelector(".menu-toggle");
+
+            menu.classList.toggle("active");
+            toggle.classList.toggle("active"); // 🔥 X animatsiya
+
+            // 🔥 menu yopilganda dropdown ham yopiladi
+            if (!menu.classList.contains("active")) {
+                document.querySelectorAll(".menu-item").forEach(item => {
+                    item.classList.remove("active");
+                });
+            }
+        }
+
+        // ================= OUTSIDE CLICK =================
+        document.addEventListener("click", function (e) {
+
+            // navbar tashqarisi bosilsa → menu yopiladi
+            if (!e.target.closest(".navbar") && !e.target.closest(".menu")) {
+                document.querySelector(".menu").classList.remove("active");
+                document.querySelector(".menu-toggle").classList.remove("active");
+
+                // dropdown ham yopiladi
+                document.querySelectorAll(".menu-item").forEach(item => {
+                    item.classList.remove("active");
+                });
+            }
+
+        });
+
+    </script>
+</body>
+
+</html>

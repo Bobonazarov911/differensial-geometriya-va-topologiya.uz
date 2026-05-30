@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fan hujjatlari</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* PDF SECTION */
+        .pdf-section {
+            width: 90%;
+            max-width: 37.5rem;
+            margin: 2.5rem auto;
+            background: #1e293b;
+            padding: 1.5625rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.4);
+        }
+
+        .pdf-section h2 {
+            margin-bottom: 0.9375rem;
+        }
+
+        /* LIST */
+        .pdf-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.625rem;
+        }
+
+        /* ITEM */
+        .pdf-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 0.875rem 1.125rem;
+            background: #334155;
+            color: white;
+            border-radius: 0.625rem;
+
+            transition: 0.2s;
+        }
+
+        .pdf-item:hover {
+            background: #475569;
+            transform: translateY(-0.125rem);
+        }
+
+        /* TEXT */
+        .pdf-item span {
+            display: flex;
+            align-items: center;
+            gap: 0.625rem;
+            font-size: 1rem;
+        }
+
+        /* BUTTONS */
+        .pdf-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .view-btn {
+            padding: 0.375rem 0.625rem;
+            background: #0ea5e9;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.375rem;
+            font-size: 0.8125rem;
+            transition: 0.2s;
+        }
+
+        .view-btn:hover {
+            background: #0284c7;
+        }
+
+        .download-btn {
+            padding: 0.375rem 0.625rem;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.375rem;
+            font-size: 0.8125rem;
+            transition: 0.2s;
+        }
+
+        .download-btn:hover {
+            background: #1d4ed8;
+        }
+
+        .file-size {
+            color: #94a3b8;
+            font-size: 0.75rem;
+            margin-left: 0.3125rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="navbar">
+
+            <div class="brand">
+                <div class="mini-logo">
+                    <img src="logo.png" alt="logo">
+                    <span>IPU</span>
+                </div>
+                <h3 class="nom">Differensial geometriya va topologiya</h3>
+            </div>
+
+            <!-- 🔥 MENU ICHIDA -->
+            <div class="menu">
+
+                <div class="menu-item" onclick="toggleMenu(this, event)">
+                    <a href="index.html" class="menu-btn menyu">Bosh sahifa</a>
+                </div>
+
+                <div class="menu-item" onclick="toggleMenu(this, event)">
+                    <a href="fan_hujjatlari.html" class="menu-btn menyu active">Fan hujjatlari</a>
+                </div>
+
+                <div class="menu-item" onclick="toggleMenu(this, event)">
+                    <div class="menu-btn">
+                        Fan resurslari <span class="arrow">▼</span>
+                    </div>
+
+                    <div class="dropdown">
+                        <a href="maruza.html">Maruza</a>
+                        <a href="amaliy.html">Amaliy</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTENT -->
+        <div class="container">
+            <div class="pdf-section">
+                <h2>Fan hujjatlari</h2>
+
+                <div class="pdf-list">
+
+                    <!-- O‘quv reja -->
+                    <div class="pdf-item">
+                        <span>
+                            📘 O‘quv reja
+                            <small class="file-size" data-file="pdf/oquv reja.pdf">(loading...)</small>
+                        </span>
+                        <div class="pdf-actions">
+                            <a href="pdf/oquv reja.pdf" target="_blank" class="view-btn">👁 Ko‘rish</a>
+                            <a href="pdf/oquv reja.pdf" download class="download-btn">⬇️ Yuklab olish</a>
+                        </div>
+                    </div>
+
+                    <!-- Fan dasturi -->
+                    <div class="pdf-item">
+                        <span>
+                            📘 Fan dasturi
+                            <small class="file-size" data-file="pdf/fan dasturi.pdf">(loading...)</small>
+                        </span>
+
+                        <div class="pdf-actions">
+                            <a href="pdf/fan dasturi.pdf" target="_blank" class="view-btn">👁 Ko‘rish</a>
+                            <a href="pdf/fan dasturi.pdf" download class="download-btn">⬇️ Yuklab olish</a>
+                        </div>
+                    </div>
+
+                    <!-- Sillabus -->
+                    <div class="pdf-item">
+                        <span>
+                            📘 Sillabus
+                            <small class="file-size" data-file="pdf/sillabus.pdf">(loading...)</small>
+                        </span>
+
+                        <div class="pdf-actions">
+                            <a href="pdf/sillabus.pdf" target="_blank" class="view-btn">👁 Ko‘rish</a>
+                            <a href="pdf/sillabus.pdf" download class="download-btn">⬇️ Yuklab olish</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- JS -->
+    <script src="fan_res.js"></script>
+
+    <script>
+        function toggleMenu(element, event) {
+            event.stopPropagation();
+
+            let isOpen = element.classList.contains("active");
+
+            document.querySelectorAll(".menu-item").forEach(item => {
+                item.classList.remove("active");
+            });
+
+            if (!isOpen) {
+                element.classList.add("active");
+            }
+        }
+
+        document.addEventListener("click", function (e) {
+
+            // dropdown yopish
+            if (!e.target.closest(".menu-item")) {
+                document.querySelectorAll(".menu-item").forEach(item => {
+                    item.classList.remove("active");
+                });
+            }
+
+            // 🔥 menu yopish (navbar tashqarisi bosilsa)
+            if (!e.target.closest(".navbar") && !e.target.closest(".menu")) {
+                document.querySelector(".menu").classList.remove("active");
+                document.querySelector(".menu-toggle").classList.remove("active");
+            }
+
+        });
+
+        document.querySelectorAll(".file-size").forEach(el => {
+            const file = el.getAttribute("data-file");
+
+            fetch(file, { method: "HEAD" })
+                .then(res => {
+                    let size = res.headers.get("content-length");
+
+                    if (size) {
+                        size = size / 1024;
+
+                        if (size > 1024) {
+                            size = (size / 1024).toFixed(2) + " MB";
+                        } else {
+                            size = size.toFixed(0) + " KB";
+                        }
+
+                        el.textContent = `(${size})`;
+                    } else {
+                        el.textContent = "(unknown)";
+                    }
+                })
+                .catch(() => {
+                    el.textContent = "(error)";
+                });
+        });
+
+        function toggleNav() {
+            const menu = document.querySelector(".menu");
+            const toggle = document.querySelector(".menu-toggle");
+
+            menu.classList.toggle("active");
+            toggle.classList.toggle("active"); // 🔥 X animatsiya
+
+            // 🔥 menu yopilsa dropdown ham yopiladi
+            if (!menu.classList.contains("active")) {
+                document.querySelectorAll(".menu-item").forEach(item => {
+                    item.classList.remove("active");
+                });
+            }
+        }
+    </script>
+
+</body>
+
+</html>

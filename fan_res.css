@@ -1,0 +1,124 @@
+ /* PDF SECTION */
+.pdf-section {
+    width: 90%;
+    max-width: 62.5rem; /* 1000px */
+
+    margin: 2rem auto;
+
+    background: #1e293b;
+    padding: 1.5625rem; /* 25px */
+    border-radius: 0.75rem; /* 12px */
+
+    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.4); /* px qoladi */
+    border: 1px solid #334155;
+}
+
+.pdf-section + .pdf-section {
+    margin-top: 2rem;
+}
+
+
+
+.pdf-section h2 {
+    margin-bottom: 0.9375rem; /* 15px */
+}
+
+/* LIST */
+.pdf-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem; /* 10px */
+
+    max-height: 25rem; /* 400px */
+    overflow-y: auto;
+
+    padding-right: 0.375rem; /* 6px */
+
+    scroll-behavior: smooth;
+}
+
+/* ITEM */
+.pdf-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0.875rem 1.125rem; /* 14px 18px */
+    background: #334155;
+    color: white;
+    border-radius: 0.625rem; /* 10px */
+
+    transition: 0.2s;
+}
+
+.pdf-item:hover {
+    background: #475569;
+    transform: translateY(-0.125rem); /* 2px */
+}
+
+/* TEXT */
+.pdf-item span {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem; /* 10px */
+    font-size: 1rem; /* 16px */
+}
+
+/* BUTTONS */
+.pdf-actions {
+    display: flex;
+    gap: 0.5rem; /* 8px */
+}
+
+.view-btn {
+    padding: 0.375rem 0.625rem; /* 6px 10px */
+    background: #0ea5e9;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.375rem; /* 6px */
+    font-size: 0.8125rem; /* 13px */
+    transition: 0.2s;
+}
+
+.view-btn:hover {
+    background: #0284c7;
+}
+
+.download-btn {
+    padding: 0.375rem 0.625rem;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 0.375rem;
+    font-size: 0.8125rem;
+    transition: 0.2s;
+}
+
+.download-btn:hover {
+    background: #1d4ed8;
+}
+
+.file-size {
+    color: #94a3b8;
+    font-size: 0.75rem; /* 12px */
+    margin-left: 0.3125rem; /* 5px */
+}
+
+/* SCROLL */
+.pdf-list::-webkit-scrollbar {
+    width: 0.625rem; /* 10px */
+}
+
+.pdf-list::-webkit-scrollbar-track {
+    background: #1e293b;
+    border-radius: 0.625rem;
+}
+
+.pdf-list::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 0.625rem;
+}
+
+.pdf-list::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
